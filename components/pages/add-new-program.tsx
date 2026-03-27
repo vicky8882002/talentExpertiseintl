@@ -101,7 +101,7 @@ export default function AddNewProgram({ onBack, editId }: { onBack?: () => void;
   const [courseOutline, setCourseOutline] = useState<CourseOutlineItem[]>([
     {
       id: "1",
-      day: "Day 1",
+      day: "Module 1",
       title: "",
       content: "",
     },
@@ -738,19 +738,6 @@ export default function AddNewProgram({ onBack, editId }: { onBack?: () => void;
               </select>
             </div>
 
-            <div className="md:col-span-2">
-              <label className="block text-sm font-semibold theme-text mb-2">
-                Target Audience <span className="text-destructive">*</span>
-              </label>
-              <textarea
-                value={formData.targetAudience}
-                onChange={(e) => handleInputChange("targetAudience", e.target.value)}
-                rows={3}
-                className="w-full px-4 py-2 bg-input border border-border rounded-lg theme-text placeholder-muted-foreground focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all resize-none"
-                placeholder="Describe the target audience for this course..."
-                required
-              />
-            </div>
           </div>
         </div>
 
@@ -783,13 +770,10 @@ export default function AddNewProgram({ onBack, editId }: { onBack?: () => void;
           <h2 className="text-2xl font-bold theme-text border-b border-border pb-3">
             Training Methodology <span className="text-destructive">*</span>
           </h2>
-          <textarea
+          <RichTextEditor
             value={formData.trainingMethodology}
-            onChange={(e) => handleInputChange("trainingMethodology", e.target.value)}
-            rows={4}
-            className="w-full px-4 py-2 bg-input border border-border rounded-lg theme-text placeholder-muted-foreground focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all resize-none"
+            onChange={(value) => handleInputChange("trainingMethodology", value)}
             placeholder="Describe the training methodology..."
-            required
           />
         </div>
 
@@ -960,7 +944,7 @@ export default function AddNewProgram({ onBack, editId }: { onBack?: () => void;
               className="px-4 py-2 bg-primary text-primary-foreground rounded-lg font-semibold hover:bg-primary/90 transition-all flex items-center gap-2"
             >
               <Plus size={18} />
-              Add Day
+              Add Module
             </button>
           </div>
 
@@ -984,7 +968,7 @@ export default function AddNewProgram({ onBack, editId }: { onBack?: () => void;
                 </div>
 
                 <div>
-                  <label className="block text-sm font-semibold theme-text mb-2">Day Title</label>
+                  <label className="block text-sm font-semibold theme-text mb-2">Module Title</label>
                   <input
                     type="text"
                     value={item.title}
@@ -995,7 +979,7 @@ export default function AddNewProgram({ onBack, editId }: { onBack?: () => void;
                 </div>
 
                 <div>
-                  <label className="block text-sm font-semibold theme-text mb-2">Day Content</label>
+                  <label className="block text-sm font-semibold theme-text mb-2">Module Content</label>
                   <RichTextEditor
                     value={item.content}
                     onChange={(value) => updateCourseOutlineItem(item.id, "content", value)}
