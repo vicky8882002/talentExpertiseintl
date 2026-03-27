@@ -974,7 +974,7 @@ export default function AddNewProgram({ onBack, editId }: { onBack?: () => void;
                     value={item.title}
                     onChange={(e) => updateCourseOutlineItem(item.id, "title", e.target.value)}
                     className="w-full px-4 py-2 bg-input border border-border rounded-lg theme-text placeholder-muted-foreground focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all"
-                    placeholder="Enter day title..."
+                    placeholder="Enter module title..."
                   />
                 </div>
 
@@ -983,7 +983,7 @@ export default function AddNewProgram({ onBack, editId }: { onBack?: () => void;
                   <RichTextEditor
                     value={item.content}
                     onChange={(value) => updateCourseOutlineItem(item.id, "content", value)}
-                    placeholder="Enter day content/topics..."
+                    placeholder="Enter module content/topics..."
                   />
                 </div>
               </div>
