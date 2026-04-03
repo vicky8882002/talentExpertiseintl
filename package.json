@@ -99,7 +99,3 @@
     "typescript": "^5"
   }
 }
-"scripts": {
-  "postinstall": "if [ \"$PRISMA_GENERATE\" != \"false\" ]; then npx prisma generate; fi",
-  ...
-}
